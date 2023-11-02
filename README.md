@@ -1,13 +1,15 @@
 # Covid-19 Analysis 2023
 
-Within the context of this study, I am experimenting with the fundamentals of SQL to apply my newly acquired skills by analyzing COVID-19 data.
-
+Within the context of this study, I am experimenting the fundamentals of SQL to apply my newly acquired skills by analyzing COVID-19 data.
+- The dataset contain information on deaths, cases, hospitalizations, mortality risk and others of Covid-19, covering the period from 8/01/2020 until 1/11/2023.
+- The dataset used for this experiment was from <a href="https://ourworldindata.org/covid-deaths">Coronavirus Pandemic (COVID-19)</a><br>
+- Date of data extraction: 1/11/2023.
 
 ## Data Analysis
 
 ### Covid Cases in Malaysia
 1. How many are the total cases, deaths and death rate in Malaysia?
-``` js
+``` javascript
 SELECT location, MAX(total_cases) as total_cases, MAX(total_deaths) AS total_deaths, MAX((total_deaths/total_cases)) * 100 AS percentage_death
 FROM dbo.[covid-data]
 WHERE location = 'Malaysia'
@@ -15,7 +17,15 @@ GROUP BY location
 ORDER BY percentage_death
 ```
 
-2. What is the highest total death in Malaysia?
+2. What is the weekly hospital admissions number in Malaysia?
+``` javascript
+SELECT location, date, weekly_hosp_admissions  
+FROM dbo.[covid]
+WHERE location = 'Malaysia' and date > '2023-01-01'
+GROUP BY location, date, weekly_hosp_admissions
+```
+
+3. What is the highest total death in Malaysia?
 ``` js
 SELECT location, population, MAX(total_deaths) AS total_deaths, 
        MAX(ROUND((total_deaths / population) * 100, 2)) AS death_rate_by_population
@@ -24,21 +34,12 @@ WHERE location = 'Malaysia'
 GROUP BY location, population
 ```
 
-3. Show the timeline of the infection rate of Covid-19 in Malaysia for the past 6 months in Malaysia.
+4. Show the timeline of the infection rate of Covid-19 in Malaysia for the past 10 months in 2023.
  ``` js
   SELECT location, date, total_cases, ROUND(total_cases/population*100, 2) AS infection_rate
 FROM dbo.[covid-data]
 WHERE location = 'Malaysia' 
-	  AND (date = '2023-01-01' 
-		OR date = '2023-02-01'
-		OR date = '2023-03-01'
-		OR date = '2023-04-01'
-		OR date = '2023-05-01'
-		OR date = '2023-06-01'
-		OR date = '2023-07-01'
-		OR date = '2023-08-01'
-		OR date = '2023-09-01'
-		OR date = '2023-10-01')
+	  AND date > '2023-01-01'
 ```
 There was an increase of 0.31% with 103237 total of new cases and 336 deaths in the span of 10 months in 2023.
 
