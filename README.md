@@ -16,6 +16,10 @@ WHERE location = 'Malaysia'
 GROUP BY location
 ORDER BY percentage_death
 ```
+#### Answer
+![Q1 (MY)](https://github.com/shahrulbakar96/Covid-19-Analysis/assets/118825569/74b43eb9-b3c4-451e-9ac7-bf5fc82df3e8)
+
+
 
 2. What is the weekly hospital admissions number in Malaysia?
 ``` javascript
@@ -33,6 +37,9 @@ FROM dbo.[covid-data]
 WHERE location = 'Malaysia'
 GROUP BY location, population
 ```
+#### Answer
+![Q3 (MY)](https://github.com/shahrulbakar96/Covid-19-Analysis/assets/118825569/8ff21fc6-0044-48a8-a34c-34aca8a5058c)
+
 
 4. Show the timeline of the infection rate of Covid-19 in Malaysia for the past 10 months in 2023.
  ``` js
@@ -54,6 +61,9 @@ total_deaths IS NOT NULL
 GROUP BY location
 ORDER BY location, percentage_death
 ```
+#### Answer
+![Q1 (CT)](https://github.com/shahrulbakar96/Covid-19-Analysis/assets/118825569/90487d42-e85c-437c-9085-1dda65ba3bd9)
+
 
 2. How much are the infection rate per population from all countries
 
@@ -88,6 +98,8 @@ WHERE total_cases is not null
 GROUP BY location, population
 ORDER BY infection_rate DESC
 ```
+#### Answer
+![Q3 (CT)](https://github.com/shahrulbakar96/Covid-19-Analysis/assets/118825569/0bd100b2-d310-4250-961f-c947770c749c)
 
 4. List countries with the highest death rate by population.
 
@@ -97,6 +109,8 @@ FROM dbo.[covid-data] WHERE total_deaths IS NOT NULL
 GROUP BY location, population
 ORDER BY highest_death DESC
 ```
+#### Answer
+![Q4 (CT)](https://github.com/shahrulbakar96/Covid-19-Analysis/assets/118825569/95e56055-06dc-4ad3-a8e6-a8c4d5214cd4)
 
 
    
