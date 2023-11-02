@@ -1,9 +1,11 @@
 # Covid-19 Analysis 2023
 
-Within the context of this study, I am experimenting the fundamentals of SQL to apply my newly acquired skills by analyzing COVID-19 data.
+Within the context of this study, I'm refining my understanding of the foundational principles of SQL by analyzing COVID-19 data across the world.
 - The dataset contain information on deaths, cases, hospitalizations, mortality risk and others of Covid-19, covering the period from 8/01/2020 until 1/11/2023.
 - The dataset used for this experiment was from <a href="https://ourworldindata.org/covid-deaths">Coronavirus Pandemic (COVID-19)</a><br>
 - Date of data extraction: 1/11/2023.
+- The results that produced were solely intended for the purpose of practicing and learning.
+- Data visualization - in progress...
 
 ## Data Analysis
 
@@ -48,7 +50,8 @@ FROM dbo.[covid-data]
 WHERE location = 'Malaysia' 
 	  AND date > '2023-01-01'
 ```
-There was an increase of 0.31% with 103237 total of new cases and 336 deaths in the span of 10 months in 2023.
+#### Answer
+- There was an increase of 0.31% with 103237 total of new cases and 336 deaths in the span of 10 months in 2023.
 
 
 ### Covid Cases from All Countries
