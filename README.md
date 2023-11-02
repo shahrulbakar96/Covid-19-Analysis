@@ -30,6 +30,9 @@ FROM dbo.[covid]
 WHERE location = 'Malaysia' and date > '2023-01-01'
 GROUP BY location, date, weekly_hosp_admissions
 ```
+#### Answer
+- Will be displayed in data visualization chart.
+  
 
 3. What is the highest total death in Malaysia?
 ``` js
@@ -52,6 +55,7 @@ WHERE location = 'Malaysia'
 ```
 #### Answer
 - There was an increase of 0.31% with 103237 total of new cases and 336 deaths in the span of 10 months in 2023.
+
 
 
 ### Covid Cases from All Countries
@@ -77,6 +81,8 @@ FROM dbo.[covid-data]
 WHERE total_cases is not null
 ORDER BY location, date
 ```
+#### Answer
+- Will be displayed in data visualization chart.
 
 3. List countries with the highest infection rate.
 
