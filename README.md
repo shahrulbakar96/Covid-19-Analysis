@@ -1,4 +1,4 @@
-# Covid-19 Analysis 2023
+# (SQL) Covid-19 Analysis 2023
 
 Within the context of this study, I'm refining my understanding of the foundational principles of SQL by analyzing COVID-19 data across the world.
 - The dataset contain information on deaths, cases, hospitalizations, mortality risk and others of Covid-19, covering the period from 8/01/2020 until 1/11/2023.
